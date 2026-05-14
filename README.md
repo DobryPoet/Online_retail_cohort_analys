@@ -7,8 +7,8 @@
 
 ## Данные
 
-- **Источник:** [Сайт  kaggle.com](https://www.kaggle.com/)
-- **Файл:** [`Online_Retail.csv`](https://drive.google.com/file/d/1mWn89h3cngz3t2ejPLX0xlGwIVWRZL7q/view?usp=sharing) (исходный, не включён в репозиторий из-за размера)
+- **Источник:** [Kaggle](https://www.kaggle.com/) / [UCI ML Repository](https://archive.ics.uci.edu/ml/datasets/Online+Retail)
+- **Файл:** [`Online_Retail.csv`](https://drive.google.com/uc?export=download&id=1mWn89h3cngz3t2ejPLX0xlGwIVWRZL7q) (прямая ссылка для скачивания)
 - **Очищенный файл** создаётся скриптом `clean.py`
 
 ## Задачи
@@ -26,7 +26,30 @@
 
 ## Как запустить
 
-1. Скачайте исходный файл `Online_Retail.csv` (ссылка в разделе "Данные").
+1. Скачайте исходный файл `Online_Retail.csv` по [ссылке](https://drive.google.com/uc?export=download&id=1mWn89h3cngz3t2ejPLX0xlGwIVWRZL7q).
 2. Установите библиотеки:
    ```bash
    pip install pandas matplotlib seaborn
+
+## Запустите скрипт очистки:
+
+bash
+python clean.py
+
+## Запустите скрипт анализа:
+
+bash
+python retention.py
+
+## Результаты
+
+https://retention_heatmap.png
+
+## Основные выводы
+
+Удержание на первый месяц после покупки – около 30% в среднем по когортам.
+Наблюдается сезонный пик в ноябре (предновогодние покупки): retention для когорты декабря 2010 года достигает 50% на 11-й месяц.
+Долгосрочное удержание (через 12 месяцев) – 26.6% для когорты декабря 2010, что говорит о лояльной аудитории.
+
+## Рекомендации
+Усилить коммуникацию с клиентами в периоды спада (февраль–март) с помощью персонализированных предложений и программ лояльности.
