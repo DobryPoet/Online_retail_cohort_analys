@@ -7,7 +7,7 @@
 
 ## Данные
 
-- **Источник:**[Сайт kaggle.com](https://www.kaggle.com/)
+- **Источник:** [Сайт  kaggle.com](https://www.kaggle.com/)
 - **Файл:** [`Online_Retail.csv`](https://drive.google.com/file/d/1mWn89h3cngz3t2ejPLX0xlGwIVWRZL7q/view?usp=sharing) (исходный, не включён в репозиторий из-за размера)
 - **Очищенный файл** создаётся скриптом `clean.py`
 
