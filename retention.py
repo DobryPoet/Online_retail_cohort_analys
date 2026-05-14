@@ -6,7 +6,7 @@ import seaborn as sns
 df = pd.read_csv("Online_Retail_clean.csv", parse_dates=['InvoiceDate'])
 
 
-#2 = Формируем временные когорты по месяцам первой покупки
+#2 Формируем временные когорты по месяцам первой покупки
 cohort_date = df.groupby('CustomerID')['InvoiceDate'].min().reset_index()
 cohort_date.columns = ['CustomerID', 'CohortDate']
 cohort_date['CohortMonth'] = cohort_date['CohortDate'].dt.to_period('M')
