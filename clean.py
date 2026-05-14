@@ -14,7 +14,7 @@ df = df.drop_duplicates()
 #3 Убираем пустые Customer ID
 df = df.dropna(subset=['CustomerID'])
 
-#4 Приводим столбцы к оптимальным типам данныз
+#4 Приводим столбцы к оптимальным типам данных
 
 df['CustomerID'] = df["CustomerID"].astype(int)
 df['InvoiceDate'] = pd.to_datetime(df["InvoiceDate"])
