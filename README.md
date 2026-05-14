@@ -34,15 +34,15 @@
 
 3. Запустите скрипт очистки:
 
-```bash
-python clean.py
-```
+   ```bash
+   python clean.py
+   ```
 
 4. Запустите скрипт анализа:
 
-```bash
-python retention.py
-```
+   ```bash
+   python retention.py
+   ```
 
 ## Результаты
 
