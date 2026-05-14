@@ -29,17 +29,19 @@
 1. Скачайте исходный файл `Online_Retail.csv` по [ссылке](https://drive.google.com/uc?export=download&id=1mWn89h3cngz3t2ejPLX0xlGwIVWRZL7q).
 2. Установите библиотеки:
    ```bash
-   pip install pandas matplotlib seaborn```
+   pip install pandas matplotlib seaborn
 
 ## Запустите скрипт очистки:
 
 ```bash
-python clean.py```
+python clean.py
+```
 
 ## Запустите скрипт анализа:
 
 ```bash
-python retention.py```
+python retention.py
+```
 
 ## Результаты
 
