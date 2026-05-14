@@ -33,17 +33,17 @@
 
 ## Запустите скрипт очистки:
 
-bash
+```bash
 python clean.py
 
 ## Запустите скрипт анализа:
 
-bash
+```bash
 python retention.py
 
 ## Результаты
 
-https://retention_heatmap.png
+![Тепловая карта удержания](retention_heatmap.png)
 
 ## Основные выводы
 
