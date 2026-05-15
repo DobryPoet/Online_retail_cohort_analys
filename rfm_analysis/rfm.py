@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import rfm_segment_name as rsn
 
-#1 Згружаю очищенный дф
+#1 Загружаю очищенный дф
 df = pd.read_csv('Online_retail_clean.csv', parse_dates=['InvoiceDate'])
 
 #2 Добавляю столбец с общей стоимостью товара
@@ -12,7 +12,7 @@ df['TotalPrice'] = df['Quantity'] * df['UnitPrice']
 #3 Переменная крайней даты в дф
 snapshot_date = df['InvoiceDate'].max()
 
-#4 Расчитываем данные RFM анализа по каждому Посетителю
+#4 Рассчитываем данные RFM анализа по каждому Посетителю
 rfm = df.groupby('CustomerID').agg({
     'InvoiceDate': lambda x: ((snapshot_date - x.max()).days), #Recency
     'InvoiceNo': 'nunique',                                    #Frequency
