@@ -1,6 +1,5 @@
 import pandas as pd
 import matplotlib.pyplot as plt
-import numpy as np
 import seaborn as sns
 
 #1 загружаем и чистим датафрейм от артефактов
@@ -61,19 +60,32 @@ plt.tight_layout()
 plt.savefig('weekday.png')
 plt.show()
 
-print(weekday_sales.head)
-
 #5 "Часы пик"
+
 hourly = df.groupby('Hour')['TotalPrice'].sum()
 
-#5.1 График "Часов пик"
-plt.figure(figsize=(10,5))
-plt.bar(hourly.index, hourly.values)
-plt.title('Выручка по часам')
+#5.1 График "Часы пик"
+
+hours_range = range(6, 21)
+hourly_pct = (hourly / hourly.sum()) * 100
+hourly_pct = hourly_pct.reindex(hours_range, fill_value=0)
+
+plt.figure(figsize=(12,5))
+bars = plt.bar(hourly_pct.index, hourly_pct.values, color='skyblue')
+plt.title('Распределение выручки по часам (в % от общей выручки)')
 plt.xlabel('Час')
-plt.ylabel('Выручка')
+plt.ylabel('Доля выручки, %')
+plt.xticks(range(6,21))
+
+for bar in bars:
+    height = bar.get_height()
+    if height > 1:
+        plt.text(bar.get_x() + bar.get_width()/2., height/2, f'{height:.1f}%', 
+                 ha='center', va='center', color='white', fontsize=8)
+    elif height > 0:
+        plt.text(bar.get_x() + bar.get_width()/2., height + 0.2, f'{height:.1f}%', 
+                 ha='center', va='bottom', fontsize=7)
+
 plt.tight_layout()
 plt.savefig('hourly.png')
 plt.show()
-
-
